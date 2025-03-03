@@ -26,7 +26,7 @@ export default function Home() {
     }, 1000);
 
     return () => clearInterval(intervalID)
-  }, [date]);
+  }, [date, sec, min, hour]);
 
   const hstyle = {
     transform: `rotate(${hour*30 + (min * 6) / 12}deg)`
