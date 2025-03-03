@@ -9,18 +9,24 @@ export default function Home() {
 
   const [date, setDate] = useState<Date>(new Date());
 
-  const [hour] = useState<number>(date.getHours());
-  const [min] = useState<number>(date.getMinutes());
+  const [hour, setHour] = useState<number>(date.getHours());
+  const [min, setMin] = useState<number>(date.getMinutes());
   const [sec, setSec] = useState<number>(date.getSeconds());
+
+  console.log(hour)
+  console.log('min', min)
 
   useEffect(() => {
     const intervalID = setInterval(() => {
+      new Date();
       setDate(new Date());
+      setHour(new Date().getHours());
+      setMin(new Date().getMinutes());
       setSec(sec => sec+1);
     }, 1000);
 
     return () => clearInterval(intervalID)
-  }, []);
+  }, [sec]);
 
   const hstyle = {
     transform: `rotate(${hour*30 + (min * 6) / 12}deg)`
