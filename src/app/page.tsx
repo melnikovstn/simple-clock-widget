@@ -7,17 +7,13 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
 
-  const h: number = new Date().getHours();
-  const m: number = new Date().getMinutes();
-  const s: number = new Date().getSeconds();
-
-  const [hour, setHour] = useState<number>(h);
-  const [min, setMin] = useState<number>(m);
-  const [sec, setSec] = useState<number>(s);
+  const [hour, setHour] = useState<number>(new Date().getHours());
+  const [min, setMin] = useState<number>(new Date().getMinutes());
+  const [sec, setSec] = useState<number>(new Date().getSeconds());
 
   useEffect(() => {
     const intervalID = setInterval(() => {
-      setHour(h);
+      setHour(new Date().getHours());
       setMin(new Date().getMinutes());
       setSec(sec => sec+1);
     }, 1000);
