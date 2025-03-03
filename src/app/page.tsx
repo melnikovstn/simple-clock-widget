@@ -6,11 +6,17 @@ import { Trigger } from "./trigger";
 
 export default function Home() {
 
+  const [flag, setFlag] = useState('');
+
       const [date, setDate] = useState<Date>(new Date());
   
       const [hour, setHour] = useState<number>(date.getHours());
       const [min, setMin] = useState<number>(date.getMinutes());
       const [sec, setSec] = useState<number>(date.getSeconds());
+
+      useEffect(() => {
+        setFlag(Math.random().toString())
+      }, [sec])
     
       console.log(hour)
       console.log('min', min)
@@ -30,7 +36,7 @@ export default function Home() {
       }, [sec]);
 
   return (
-    <div className="wrapper">
+    <div className={`wrapper ${flag}`}>
       <Trigger hour={hour} min={min} sec={sec} />
     </div>
   );

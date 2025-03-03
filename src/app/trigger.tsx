@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import { hours } from "./datas/layot";
 import { Hour } from "./hour";
 
@@ -9,12 +9,6 @@ type Tprops = {
 }
 
 export const Trigger: FC<Tprops> = ({hour, min, sec}) => {
-  
-  const [flag, setFlag] = useState('');
-
-  useEffect(() => {
-    setFlag(Math.random().toString())
-  }, [sec])
 
     const hstyle = {
       transform: `rotate(${hour*30 + (min * 6) / 12}deg)`
@@ -30,8 +24,8 @@ export const Trigger: FC<Tprops> = ({hour, min, sec}) => {
 
     return (<div className="clock_wrapper">
         {hours.map((h, i) => <Hour key={hours[i]} i={i} hours={hours} hour={h} />)}
-        <div className={`hourarrow ${flag}`} style={hstyle}></div>
-        <div className={`minutearrow ${flag}`} style={mstyle}></div>
+        <div className='hourarrow' style={hstyle}></div>
+        <div className='minutearow' style={mstyle}></div>
         <div className="secundearrow" style={sstyle}></div>
         <div className="point"></div>
       </div>)
