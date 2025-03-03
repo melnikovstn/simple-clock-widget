@@ -1,0 +1,80 @@
+.hour {
+    display: block;
+}
+
+.hour12 {
+    position: absolute;
+    top: 2%;
+    left: 45%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hour9 {
+    position: absolute;
+    top: 41%;
+    left: 2%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hour6 {
+    position: absolute;
+    bottom: 2%;
+    left: 48%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hour3 {
+    position: absolute;
+    top: 41%;
+    right: 2%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.hourarrow {
+    position: absolute;
+    width: 5px;
+    height: 25%;
+    left: 50%;
+    top: 25%;
+    background-color: red;
+    transform-origin: bottom;
+    transition: 1s linear;
+    border-radius: 0 50%;
+    z-index: 52;
+}
+
+.minutearrow {
+    position: absolute;
+    width: 3px;
+    height: 35%;
+    top: 15%;
+    left: 50%;
+    background-color: black;
+    transform-origin: bottom;
+    transition: 1s linear;
+    border-radius: 50% 50% 50% 0;
+}
+
+.secundearrow {
+    position: absolute;
+    width: 2px;
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    background-color: black;
+    transform-origin: bottom;
+    transition: 1s linear;
+}
+
+.point {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: 70;
+}
