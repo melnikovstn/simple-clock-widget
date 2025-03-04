@@ -19,7 +19,7 @@ export default function Home() {
       useEffect(() => {
         setDate(new Date());
         const intervalID = setInterval(() => {
-          new Date();
+          setSec(new Date().getSeconds());
           setDate(new Date());
           setHour(new Date().getHours());
           setMin(new Date().getMinutes());
