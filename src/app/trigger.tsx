@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { hours } from "./datas/layot";
 import { Hour } from "./hour";
+import "./hour";
 
 type Tprops = {
   hour: number;
@@ -11,11 +12,11 @@ type Tprops = {
 export const Trigger: FC<Tprops> = ({hour, min, sec}) => {
 
     const hstyle = {
-      transform: `rotate(${hour*30 + (min * 6) / 12}deg)`
+      transform: `rotate(${sec ? (hour*30 + (min * 6) / 12) : (hour*30 + (min * 6) / 12)}deg)`
     }
   
     const mstyle = {
-      transform: `rotate(${min * 6}deg)`
+      transform: `rotate(${sec ? min * 6 : min * 6}deg)`
     }
   
     const sstyle = {
@@ -25,7 +26,7 @@ export const Trigger: FC<Tprops> = ({hour, min, sec}) => {
     return (<div className="clock_wrapper">
         {hours.map((h, i) => <Hour key={hours[i]} i={i} hours={hours} hour={h} />)}
         <div className='hourarrow' style={hstyle}></div>
-        <div className='minutearow' style={mstyle}></div>
+        <div className="minutearrow" style={mstyle}></div>
         <div className="secundearrow" style={sstyle}></div>
         <div className="point"></div>
       </div>)
