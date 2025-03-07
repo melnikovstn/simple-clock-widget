@@ -1,7 +1,12 @@
 .wrapper {
   display: flex;
+  height: 100vh;
   justify-content: center;
   padding-top: 10%;
+  padding-bottom: 10%;
+  background-image: url("../../public/wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-size: cover
 }
 
 .clock_wrapper {
@@ -15,4 +20,5 @@
   box-shadow: inset 0px 0px 50px 2px black;
   border-radius: 50%;
   z-index: 55;
+  background-color: white;
 }
